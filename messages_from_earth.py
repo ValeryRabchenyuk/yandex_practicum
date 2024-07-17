@@ -1,13 +1,15 @@
-"""Ya.Contest try ID: 116127853."""
+"""Ya.Contest try ID: 116175442."""
+import string
 
 
 def decipher(sequence: str) -> str:
+    """Main function."""
     stack = []
     letter_counter = 0
     letter = ''
 
     for character in sequence:
-        if character.isnumeric():
+        if character in string.digits:
             letter_counter = letter_counter * 10 + int(character)
         elif character == '[':
             stack.append((letter, letter_counter))
